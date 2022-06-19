@@ -5,6 +5,11 @@
 
 ## **Historial de Modificaciones**:
 
+
+
+### 19/06/2022 
+- Se creó la carpeta **pages** para contener los archivos ***html*** correspondientes a cada desafío, nombrandolos según sean ***"Desafios Entregables"***: **desafio_e#.html** y los ***"Desafios Complementarios"*** como **desafio_c#**.
+- Carga del archivo html complementario a la script ralizada para cumplimentar el **Desafío Entregable Número 1:**  ***"Simulador interactivo"***.
 ### 11/06/2022 
 - Se creó la carpeta **desafío-1**.
-    - Carga de archivos html/css complementarios a la script ralizada para cumplimentar el **Desafío Entregable Número 1:**  ***"Crear Un Algoritmo Utilizando Un Ciclo"***.
+    - Carga de archivos html/css complementarios a la script ralizada para cumplimentar el **Desafío Complementario Número 1:**  ***"Crear Un Algoritmo Utilizando Un Ciclo"***.

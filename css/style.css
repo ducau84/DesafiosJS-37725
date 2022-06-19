@@ -11,7 +11,7 @@
 body {
     width: 100%;
     display: grid;
-    grid-template-areas: 
+    grid-template-areas:
         "head"
         "main"
         "foot";
@@ -37,6 +37,18 @@ body {
     text-transform: uppercase;
 }
 
+.titulo h1 {
+    font-family: 'Permanent Marker', cursive;
+    font-weight: 100;
+    font-size: 42px;
+    color: #c8ff03;
+    text-transform: uppercase;
+}
+
+#ent h1 {
+    color: #3cefab;
+}
+
 .titulo h2 {
     margin-top: 1rem;
     font-family: 'Fira Sans Condensed', sans-serif;
@@ -49,18 +61,50 @@ body {
 .listaDesafios {
     grid-area: main;
     display: flex;
-    flex-flow: column wrap;
-    padding: 10px;
-    list-style: disc;
-    justify-content: center;
-    align-items: center;
+    flex-flow: row wrap;
+    padding: 30px;
+    justify-content: space-evenly;
+    align-items: flex-start;
 
 }
 
-a{
+h3 {
+    margin-top: 1rem;
+    font-family: 'Fira Sans Condensed', sans-serif;
+    font-size: 26px;
+    text-transform: capitalize;
+    font-style: italic;
+    font-weight: 800;
+}
+
+.desComp h3 {
+    color: #c8ff03;
+    text-align: center;
+}
+
+.desEnt h3 {
+    color: #3cefab;
+    text-align: center;
+}
+
+@media screen and (max-width: 664px) {
+
+    .desEnt h3 {
+        margin-top: 70px;
+    }
+}
+
+
+.desEnt a {
+    border-color: #3cefab;
+}
+
+a {
     padding: 20px 10px;
 }
-a, button {
+
+a,
+button {
     text-decoration: none;
     border: 2px solid #c8ff03;
     border-radius: 10px;
@@ -73,6 +117,7 @@ a, button {
     font-size: 24px;
     cursor: pointer;
     position: relative;
+    top: 35px;
 }
 
 .desafios {
@@ -80,20 +125,28 @@ a, button {
     display: flex;
     flex-flow: row wrap;
     justify-content: center;
-    align-items: center;
+    align-items: flex-start;
 }
 
-.btnD{
+.btnD {
     border: 2px solid #c8ff03;
 }
 
-.btnD:hover, a:hover {
+.btnD:hover,
+a:hover {
     background-color: #c8ff03;
     color: #000;
     transition: 1s ease;
 }
 
-.btnD::before, .btnV::before, a::before  {
+.desEnt a:hover {
+    background-color: #3cefab;
+    color: #000000;
+}
+
+.btnD::before,
+.btnV::before,
+a::before {
     content: '';
     position: absolute;
     left: 0;
@@ -106,12 +159,18 @@ a, button {
     transition: 1s ease;
 }
 
-.btnD:hover::before, a:hover::before {
+.btnD:hover::before,
+a:hover::before {
     background: #c8ff03;
     top: 70px;
 }
 
-.btnV{
+.desEnt a:hover::before {
+    background: #3cefab;
+    top: 70px;
+}
+
+.btnV {
     border: 2px solid #ff0303;
 }
 
@@ -123,6 +182,19 @@ a, button {
 .btnV:hover::before {
     background: #ff0303;
     top: 70px;
+}
+
+.badge {
+
+    font-size: 1rem;
+    position: relative;
+    top: 45px;
+    left: 10px;
+}
+
+.animate__heartBeat {
+    animation-name: heartBeat;
+    animation-duration: 3s;
 }
 
 footer {
