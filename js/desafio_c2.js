@@ -20,7 +20,7 @@ const ahora18 = (a) => a * 1.75;
 
 //* Creo un array de Usuarios
 
-const usuarios = ["PAMELA", "AMALIA", "ENZO", "EMILIA"];
+const usuarios = ["pamela", "amalia", "enzo", "emilia"];
 
 //* Creo un array de Objetos
 
@@ -44,18 +44,21 @@ function costoFin(a, b) {
         `Ha seleccionado el plan "Ahora 3" el cual tiene un 15% de interes`
       );
       break;
+
     case 6:
       valorFinal = ahora6(a);
       alert(
         `Ha seleccionado el plan "Ahora 6" el cual tiene un 30% de interes`
       );
       break;
+
     case 12:
       valorFinal = ahora12(a);
       alert(
         `Ha seleccionado el plan "Ahora 12" el cual tiene un 50% de interes`
       );
       break;
+
     case 18:
       valorFinal = ahora18(a);
       alert(
@@ -70,6 +73,7 @@ function costoFin(a, b) {
       break;
   }
   //Defino que el monto a devolver debe ser un entero con 2 decimales:
+
   return valorFinal.toFixed(2);
 }
 
@@ -79,6 +83,7 @@ function importeCuota(a, b) {
   let valCuota = 0;
   valCuota = a / b;
   //Defino que el monto a devolver debe ser un entero con 2 decimales:
+
   return valCuota.toFixed(2);
 }
 
@@ -87,6 +92,7 @@ function importeCuota(a, b) {
 function discInteres(a, b) {
   let interes = 0;
   interes = a - b;
+
   //Defino que el monto a devolver debe ser un entero con 2 decimales:
   return interes.toFixed(2);
 }
@@ -94,6 +100,7 @@ function discInteres(a, b) {
 //* Creo una función para definir el proceso de compra
 
 function compraCuadernillos(a) {
+
   let totalCompra = 0;
 
   switch (a) {
@@ -129,6 +136,12 @@ function compraCuadernillos(a) {
   return totalCompra;
 }
 
+//* Creo una función para pasar la primera letra a mayúscula
+
+function primerLetraMayusc(string) {
+  return string.charAt(0).toUpperCase() + string.slice(1);
+}
+
 //* Pido al usuario que cree su id y verfico que el nombre no esté tomado
 
 do {
@@ -136,16 +149,20 @@ do {
     alert(`El nombre de ${userName} ya existe, por favor ingrese uno nuevo`);
   }
 
-  userName = prompt("Ingrese un nombre de usuario: ").toLocaleUpperCase();
+  userName = prompt("Ingrese un nombre de usuario: ").toLowerCase();
 } while (usuarios.includes(userName));
-
-alert(`el nombre de usuario: ${userName} se creó con éxito!`);
 
 //* Añado el nuevo usuario al array "Usuarios"
 
 usuarios.push(userName);
 
-console.log(userName); //? Verfico por consola que el nuevo usuario se haya añadido al array "Usuarios".
+console.log(usuarios); //? Verfico por consola que el nuevo usuario se haya añadido al array "Usuarios".
+
+//* Paso la primera letra del nombre de usuario a mayúsculas y le aviso que el mismo se ha creado correctamente
+
+userName = primerLetraMayusc(userName);
+
+alert(`el nombre de usuario: ${userName} se creó con éxito!`);
 
 //* Saludo al nuevo usuario por su nombre
 
@@ -165,25 +182,34 @@ Materia: "${cuadernillos[3].nombre}" / Precio: $ ${cuadernillos[3].precio}
 Materia: "${cuadernillos[4].nombre}" / Precio: $ ${cuadernillos[4].precio};
 
 ¿En que cuadernillos usted está interesado? 
+Ingrese la materia: `);
 
-Ingrese la materia `).toLowerCase();
+  //* Verifico que no se haya presionado cancelar
+
+  if (compra == null) {
+    alert(`¡${userName}, no ha seleccionado ningún cuadernillo!`);
+
+    break;
+  }
 
   //* Invoco la función para procesar los cuadernillos seleccionados por el usuario
-  totalCompra += compraCuadernillos(compra);
+
+  totalCompra += compraCuadernillos(compra.toLowerCase());
 
   seguirComprando = confirm("¿Desea adquirir otro cuadernillo?");
 } while (seguirComprando);
 
 //* Si el total de la compra es cero despido al usuario, en caso contrario le comunico el total de la compra y le ofrezco financiación
 if (totalCompra == 0) {
-  alert(`¡${userName}, no ha seleccionado ningún cuadernillo!
+  alert(`¡${userName}, lamentamos que no le hayan servido nuestros productos!
+
 ¡Esperamos volver a verlo pronto!`);
 } else {
   financiar = confirm(`El monto total de su compra es de $ ${totalCompra}. 
 ¿Desea ver nuestras opciones de financiación?`);
 }
 
-//* En caso de aceptar la financiación transformo la variable "totalCompra" en la variable "monto" para comenzar el proceso de financiación, 
+//* En caso de aceptar la financiación transformo la variable "totalCompra" en la variable "monto" para comenzar el proceso de financiación,
 //* Caso contrario paso el total y despido al usuario
 
 if (financiar == true && totalCompra != 0) {
