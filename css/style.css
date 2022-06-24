@@ -10,11 +10,12 @@
 
 body {
     width: 100%;
+    height: 58rem;
     display: grid;
     grid-template-areas:
-        "head"
-        "main"
-        "foot";
+        "header"
+        "desafios"
+        "footer";
     grid-template-columns: auto;
     grid-template-rows: 1fr 4fr 1fr;
     background-color: #000000;
@@ -24,7 +25,7 @@ body {
 }
 
 .titulo {
-    grid-area: head;
+    grid-area: header;
     text-align: center;
     padding: 1rem;
 }
@@ -58,8 +59,8 @@ body {
     font-style: italic;
 }
 
-.listaDesafios {
-    grid-area: main;
+.listaDesafios, .desafios {
+    grid-area: desafios;
     display: flex;
     flex-flow: row wrap;
     padding: 30px;
@@ -75,6 +76,11 @@ h3 {
     text-transform: capitalize;
     font-style: italic;
     font-weight: 800;
+}
+
+.desComp, .desEnt {
+    display: flex;
+    flex-flow: column nowrap;
 }
 
 .desComp h3 {
@@ -109,7 +115,7 @@ button {
     border: 2px solid #c8ff03;
     border-radius: 10px;
     margin: 10px;
-    width: 220px;
+    width: 320px;
     height: 80px;
     background-color: transparent;
     font-family: 'Fira Sans Condensed', sans-serif;
@@ -118,14 +124,7 @@ button {
     cursor: pointer;
     position: relative;
     top: 35px;
-}
-
-.desafios {
-    grid-area: main;
-    display: flex;
-    flex-flow: row wrap;
-    justify-content: center;
-    align-items: flex-start;
+    text-align: center;
 }
 
 .btnD {
@@ -188,7 +187,7 @@ a:hover::before {
 
     font-size: 1rem;
     position: relative;
-    top: 45px;
+    top: 6px;
     left: 10px;
 }
 
@@ -198,7 +197,7 @@ a:hover::before {
 }
 
 footer {
-    grid-area: foot;
+    grid-area: footer;
     display: flex;
     flex-flow: column wrap;
     padding: 1rem;

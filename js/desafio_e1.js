@@ -3,6 +3,9 @@
 let monto = 0;
 let plan = "";
 let aceptaFin = false;
+
+// Creo las funciones de finaciación
+
 const ahora3 = (a) => a * 1.15;
 const ahora6 = (a) => a * 1.3;
 const ahora12 = (a) => a * 1.5;
