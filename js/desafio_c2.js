@@ -26,9 +26,9 @@ const usuarios = ["pamela", "amalia", "enzo", "emilia"];
 
 const cuadernillos = [
   {id: "mat", nombre: "Matemáticas", precio: 3500},
-  {id: "pdl", nombre: "Práctias del Lenguaje", precio: 2000},
+  {id: "pdl", nombre: "Práctias del Lenguaje", precio: 4000},
   {id: "cnt", nombre: "Ciencias Naturales", precio: 2500},
-  {id: "cso", nombre: "Ciencias Sociales", precio: 1500},
+  {id: "cso", nombre: "Ciencias Sociales", precio: 3500},
   {id: "ing", nombre: "Inglés", precio: 3000},
 ];
 
